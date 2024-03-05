@@ -3,10 +3,10 @@ package com.lolo.io.onelist.core.domain.use_cases
 import android.util.Log
 import com.lolo.io.onelist.core.data.reporitory.OneListRepository
 import com.lolo.io.onelist.core.model.ItemList
-import kotlinx.coroutines.flow.first
 import java.util.Collections
+import javax.inject.Inject
 
-class MoveList(private val repository: OneListRepository) {
+class MoveList @Inject constructor(private val repository: OneListRepository) {
     suspend operator fun invoke(fromPosition: Int, toPosition: Int, lists: List<ItemList>) {
 
         Log.d("Psition", ""+fromPosition)

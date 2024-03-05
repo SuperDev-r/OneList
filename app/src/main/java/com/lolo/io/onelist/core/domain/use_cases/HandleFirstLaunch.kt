@@ -4,9 +4,10 @@ import com.lolo.io.onelist.core.data.reporitory.OneListRepository
 import com.lolo.io.onelist.core.data.shared_preferences.SharedPreferencesHelper
 import com.lolo.io.onelist.core.model.ItemList
 import kotlinx.coroutines.delay
+import javax.inject.Inject
 
-class HandleFirstLaunch(private val repository: OneListRepository,
-                        private val preferencesHelper: SharedPreferencesHelper) {
+class HandleFirstLaunch @Inject constructor(private val repository: OneListRepository,
+                                            private val preferencesHelper: SharedPreferencesHelper) {
     suspend operator fun invoke(lists: List<ItemList>): Boolean {
         delay(200)
 

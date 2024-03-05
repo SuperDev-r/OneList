@@ -3,11 +3,8 @@ package com.lolo.io.onelist.core.data.file_access
 import android.app.Application
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
-import android.widget.Toast
 import androidx.documentfile.provider.DocumentFile
 import com.anggrayudi.storage.file.DocumentFileCompat
-import com.anggrayudi.storage.file.getAbsolutePath
 import com.anggrayudi.storage.file.isTreeDocumentFile
 import com.anggrayudi.storage.file.makeFile
 import com.google.gson.Gson
@@ -19,13 +16,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withContext
 import java.io.FileNotFoundException
 import java.io.IOException
+import javax.inject.Inject
 
-class FileAccess(
+class FileAccess @Inject constructor(
     val app: Application,
 ) {
     private val coroutineIOScope = CoroutineScope(Dispatchers.IO)

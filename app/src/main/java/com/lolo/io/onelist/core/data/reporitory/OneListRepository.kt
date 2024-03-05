@@ -17,16 +17,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withContext
 import updateOne
 import java.io.FileNotFoundException
-import kotlin.coroutines.coroutineContext
+import javax.inject.Inject
+import javax.inject.Singleton
 
-
-class OneListRepository(
+@Singleton
+class OneListRepository @Inject constructor(
     private val preferences: SharedPreferencesHelper,
     private val dao: ItemListDao,
     private val fileAccess: FileAccess

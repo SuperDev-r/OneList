@@ -6,12 +6,14 @@ import androidx.lifecycle.viewModelScope
 import com.lolo.io.onelist.core.data.shared_preferences.SharedPreferencesHelper
 import com.lolo.io.onelist.core.domain.use_cases.OneListUseCases
 import com.lolo.io.onelist.core.model.ItemList
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-
-class SettingsFragmentViewModel(
+@HiltViewModel
+class SettingsFragmentViewModel @Inject constructor (
     private val useCases: OneListUseCases,
     private val preferences: SharedPreferencesHelper
 ) : ViewModel() {

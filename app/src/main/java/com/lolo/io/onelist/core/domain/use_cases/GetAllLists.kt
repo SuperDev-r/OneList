@@ -6,8 +6,9 @@ import com.lolo.io.onelist.core.data.model.AllListsWithErrors
 import com.lolo.io.onelist.core.data.reporitory.OneListRepository
 import kotlinx.coroutines.flow.Flow
 import java.io.FileNotFoundException
+import javax.inject.Inject
 
-class GetAllLists(private val repository: OneListRepository) {
+class GetAllLists @Inject constructor(private val repository: OneListRepository) {
 
     @Throws(FileNotFoundException::class, JsonSyntaxException::class, JsonIOException::class)
     suspend operator fun invoke(): Flow<AllListsWithErrors> {

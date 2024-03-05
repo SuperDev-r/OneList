@@ -19,8 +19,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.lang.ref.WeakReference
+import javax.inject.Inject
 
-class UpdateHelper(
+class UpdateHelper @Inject constructor(
     private val preferences: SharedPreferencesHelper,
     private val repository: OneListRepository
 ) {

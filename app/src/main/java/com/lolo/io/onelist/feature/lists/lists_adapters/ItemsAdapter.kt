@@ -50,7 +50,7 @@ class ItemsAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = items[position]
-        holder.binding.text.text = item.title
+        holder.binding.textItemOnList.text = item.title
         holder.itemView.tag = holder
         holder.binding.expandImg.visibility = View.GONE
 
@@ -73,16 +73,16 @@ class ItemsAdapter(
             context,
             R.drawable.ic_bullet_outline_checked
         ))
-        viewHolder.binding.text.setTextColor(ContextCompat.getColor(
+        viewHolder.binding.textItemOnList.setTextColor(ContextCompat.getColor(
             context,
             R.color.colorAccentLight
         ))
-        viewHolder.binding.text.paintFlags = viewHolder.binding.text.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+        viewHolder.binding.textItemOnList.paintFlags = viewHolder.binding.textItemOnList.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         viewHolder.binding.comment.setTextColor(ContextCompat.getColor(
             context,
             R.color.colorAccentLight
         ))
-        viewHolder.binding.comment.paintFlags = viewHolder.binding.text.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+        viewHolder.binding.comment.paintFlags = viewHolder.binding.textItemOnList.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         viewHolder.binding.expandImg.drawable.setColorFilter(ContextCompat.getColor(
             context,
             R.color.colorAccentLight
@@ -95,12 +95,12 @@ class ItemsAdapter(
             context,
             R.drawable.ic_bullet_outline
         ))
-        viewHolder.binding.text.setTextColor(ContextCompat.getColor(
+        viewHolder.binding.textItemOnList.setTextColor(ContextCompat.getColor(
             context,
             R.color.textColorPrimary
         ))
         Paint().let {
-            viewHolder.binding.text.paintFlags = it.flags
+            viewHolder.binding.textItemOnList.paintFlags = it.flags
             viewHolder.binding.comment.paintFlags = it.flags
         }
         viewHolder.binding.comment.setTextColor(ContextCompat.getColor(

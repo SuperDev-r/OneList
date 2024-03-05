@@ -1,6 +1,8 @@
 package com.lolo.io.onelist.core.domain.use_cases
 
-data class OneListUseCases(
+import javax.inject.Inject
+
+data class OneListUseCases @Inject constructor(
     val createList: CreateList,
     val importList: ImportList,
     val moveList: MoveList,
