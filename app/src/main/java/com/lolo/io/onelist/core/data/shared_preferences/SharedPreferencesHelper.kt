@@ -6,8 +6,10 @@ import androidx.preference.PreferenceManager
 import com.anggrayudi.storage.file.DocumentFileCompat
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import javax.inject.Inject
 
-class SharedPreferencesHelper(
+
+class SharedPreferencesHelper @Inject constructor(
     private val app: Application,
 ) {
     private val versionPref: String = "version"

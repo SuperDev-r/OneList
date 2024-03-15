@@ -9,7 +9,6 @@ import com.lolo.io.onelist.BuildConfig
 import com.lolo.io.onelist.R
 import com.lolo.io.onelist.core.data.model.AllListsWithErrors
 import com.lolo.io.onelist.core.data.model.ErrorLoadingList
-import com.lolo.io.onelist.core.data.model.Resource
 import com.lolo.io.onelist.core.data.shared_preferences.SharedPreferencesHelper
 import com.lolo.io.onelist.core.domain.use_cases.OneListUseCases
 import com.lolo.io.onelist.core.model.Item
@@ -17,19 +16,21 @@ import com.lolo.io.onelist.core.model.ItemList
 import com.lolo.io.onelist.core.ui.util.UIString
 import com.lolo.io.onelist.feature.lists.tuto.FirstLaunchLists
 import com.lolo.io.onelist.feature.lists.utils.toStringForShare
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class OneListFragmentViewModel(
+@HiltViewModel
+class OneListFragmentViewModel @Inject constructor (
     private val firstLaunchLists: FirstLaunchLists,
     private val useCases: OneListUseCases,
     private val preferences: SharedPreferencesHelper

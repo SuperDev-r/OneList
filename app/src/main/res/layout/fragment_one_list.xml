@@ -85,12 +85,12 @@
                         android:id="@+id/buttonRemoveList"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:background="?attr/selectableItemBackgroundBorderless"
                         android:alpha="0"
+                        android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="@string/delete_list"
                         android:padding="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/ic_delete_forever_primary_24dp" />
 
                     <ImageButton
@@ -196,8 +196,8 @@
                 android:background="@drawable/rounded_edit_text"
                 android:drawableStart="@drawable/ic_add_24dp"
                 android:drawableLeft="@drawable/ic_add_24dp"
-                android:drawableTint="?attr/colorAccent"
                 android:drawablePadding="5dp"
+                android:drawableTint="?attr/colorAccent"
                 android:elevation="1dp"
                 android:focusableInTouchMode="true"
                 android:hint="@string/add"

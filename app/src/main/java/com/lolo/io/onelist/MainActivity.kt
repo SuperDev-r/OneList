@@ -7,17 +7,15 @@ import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.anggrayudi.storage.SimpleStorageHelper
-import com.lolo.io.onelist.core.data.shared_preferences.SharedPreferencesHelper
 import com.lolo.io.onelist.core.ui.Config
 import com.lolo.io.onelist.feature.lists.OneListFragment
 import com.lolo.io.onelist.feature.lists.utils.StorageHelperHolder
-import org.koin.android.ext.android.inject
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), StorageHelperHolder  {
 
     override val storageHelper = SimpleStorageHelper(this)
-
-    private val preferences by inject<SharedPreferencesHelper>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -82,7 +80,8 @@ class MainActivity : AppCompatActivity(), StorageHelperHolder  {
 
     private fun updateThemeConfiguration(context: Context): Context {
         var mode = context.resources.configuration.uiMode
-        when (preferences.theme) {
+        val theme = "auto"
+        when (theme) {
             "light" -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 mode = Configuration.UI_MODE_NIGHT_NO;

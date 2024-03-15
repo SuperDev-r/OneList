@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -25,11 +26,10 @@ import com.lolo.io.onelist.databinding.FragmentSettingsBinding
 import com.lolo.io.onelist.feature.lists.utils.StorageHelperHolder
 import isNotNullOrEmpty
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
-    private val viewModel by lazy { getViewModel<SettingsFragmentViewModel>() }
+    private val viewModel by viewModels<SettingsFragmentViewModel>()
 
     private var storageHolder: StorageHelperHolder? = null
 
