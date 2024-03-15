@@ -122,8 +122,9 @@ dependencies {
     testImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
     androidTestImplementation( "com.google.dagger:hilt-android-testing:$hilt_version")
 
-    androidTestImplementation("com.android.support.test.espresso:espresso-core:$espressoVersion")
+    testImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
     testImplementation("junit:junit:4.14")
+    androidTestImplementation("org.hamcrest:hamcrest:2.2")
     androidTestImplementation "androidx.test.ext:junit:1.1.5"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
     androidTestImplementation("androidx.test:runner:1.5.0")
@@ -137,6 +138,11 @@ dependencies {
     testImplementation("io.qameta.allure:allure-junit5:$allureVersion")
 
     androidTestImplementation "androidx.test.uiautomator:uiautomator:2.2.0"
+
+    //kaspresso
+    testImplementation("com.kaspersky.android-components:kaspresso:1.5.2")
+    androidTestImplementation("com.kaspersky.android-components:kaspresso:1.5.2")
+    androidTestUtil("androidx.test:orchestrator:1.4.2")
 }
 
 kapt {
